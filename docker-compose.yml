@@ -1,0 +1,13 @@
+services:
+  iptv-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: iptv-web
+    ports:
+      - "41411:41411"
+    env_file:
+      - .env
+    environment:
+      - PORT=41411
+    restart: unless-stopped
